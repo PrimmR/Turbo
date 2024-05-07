@@ -3,7 +3,7 @@ A mod for Stardew Valley that allows you to alter the game's execution speed.
 
 This tool is mainly intended to be used by mod developers, e.g. to reduce the waiting involved with checking custom NPC's schedules.
 
-This is a Spiritual successor to the [GameSpeed](https://www.nexusmods.com/stardewvalley/mods/7211) mod, which sadly isn't compatible with Stardew Valley 1.6. 
+This is a spiritual successor to the [GameSpeed](https://www.nexusmods.com/stardewvalley/mods/7211) mod, which sadly isn't compatible with Stardew Valley 1.6. 
 
 *Please note: I am not responsible for any damage this causes to your game/save.*  
 *Always back everything up before you decide to start messing around with the fabric of time.*
@@ -41,3 +41,5 @@ This mod also includes 2 SMAPI console commands that can be used in place of the
 *The former command allows you to select any speed for the game to run at, which includes values outside of the 'safe range'. So make sure you double check your input before pressing enter!*
 
 
+## Bugs
+If you notice a problem with the behaviour of the mod, please raise an issue in the GitHub issue tracker, thanks!
