@@ -6,5 +6,5 @@
     "UniqueID": "Primm.Turbo",
     "EntryDll": "Turbo.dll",
     "MinimumApiVersion": "4.0.0",
-    "UpdateKeys": []
+    "UpdateKeys": [ "GitHub:PrimmR/Turbo" ]
 }
