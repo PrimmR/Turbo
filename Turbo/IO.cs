@@ -37,6 +37,7 @@ namespace Turbo
                     ModEntry.change = 1;
                 }
                 SpeedMessage();
+                Game1.playSound("smallSelect", 810);
             }
 
             // Increase speed [>]
@@ -49,6 +50,7 @@ namespace Turbo
                     ModEntry.change = 0;
                 }
                 SpeedMessage();
+                Game1.playSound("smallSelect", 1590);
             }
 
             // Reset speed [;]
@@ -57,6 +59,7 @@ namespace Turbo
                 ModEntry.speed = 1;
                 ModEntry.change = 2;
                 SpeedMessage();
+                Game1.playSound("smallSelect", 1200);
             }
 
             // Cycle clock mode [']
@@ -66,6 +69,7 @@ namespace Turbo
                 ModEntry.Config.clockMode %= 3;
                 ClockModeMessage();
                 Helper.WriteConfig(ModEntry.Config);
+                Game1.playSound("smallSelect", 1410);
             }
         }
 
