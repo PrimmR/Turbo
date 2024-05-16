@@ -1,7 +1,7 @@
 {
     "Name": "Turbo",
     "Author": "Primm",
-    "Version": "1.0.0",
+    "Version": "1.0.1",
     "Description": "Control the execution speed of the game",
     "UniqueID": "Primm.Turbo",
     "EntryDll": "Turbo.dll",

@@ -78,7 +78,7 @@ namespace Turbo
         {
             // Hud message
             Game1.hudMessages.Clear();
-            HUDMessage message = new HUDMessage($"Speed changed to: {ModEntry.speed}x", 2082);
+            HUDMessage message = new HUDMessage($"{Helper.Translation.Get("Speed.Change")} {ModEntry.speed}x", 2082);
             message.timeLeft = 3500f * (float)ModEntry.speed;
             Game1.addHUDMessage(message);
             Monitor.Log($"Sent HUD message", LogLevel.Trace);
@@ -96,12 +96,12 @@ namespace Turbo
 
             string str = ModEntry.Config.clockMode switch
             {
-                0 => "Regular",
-                1 => "Constant",
-                2 => "Frozen",
+                0 => Helper.Translation.Get("ClockMode.Regular"),
+                1 => Helper.Translation.Get("ClockMode.Constant"),
+                2 => Helper.Translation.Get("ClockMode.Frozen"),
                 _ => throw new Exception($"Invalid Clock Mode in {nameof(ClockModeMessage)}")
             };
-            HUDMessage message = new HUDMessage($"Clock Mode: {str}", 2082);
+            HUDMessage message = new HUDMessage($"{Helper.Translation.Get("ClockMode.Change")} {str}", 2082);
             message.timeLeft = 3500f * (float)ModEntry.speed;
             Game1.addHUDMessage(message);
             Monitor.Log($"Sent HUD message", LogLevel.Trace);
