@@ -50,6 +50,7 @@ namespace Turbo
             helper.ConsoleCommands.Add("set_speed", "Sets the game speed.\n\nUsage: set_speed <value>\n- value: the speed multiplier.", IO.SetSpeedCmd);
             helper.ConsoleCommands.Add("set_clock_mode", "Sets the behaviour of the in-game clock.\n\nUsage: set_clock_mode <value>\n- value: the clock mode (0, 1, or 2):\n   0: the clock increments proportionally with game speed\n   1: the clock increments at a constant rate, regardless of game speed \n   2: the clock is frozen", IO.SetClockModeCmd);
 
+
             IO.Initialise(this.Monitor, this.Helper);
             UpdatePatcher.Initialise(this.Monitor);
             HUDPatcher.Initialise(this.Monitor);

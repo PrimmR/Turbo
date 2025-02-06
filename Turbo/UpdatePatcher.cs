@@ -48,16 +48,25 @@ namespace Turbo
                     Mntr.LogOnce("Called UpdateControlInput", LogLevel.Trace);
                 }
 
-                // Call update command necessary number of times
-                while (ModEntry.elapsedTicks / ModEntry.SPF >= ModEntry.nextFrame)
-                {
-                    ModEntry.nextFrame++;
+                long updates = ModEntry.elapsedTicks / ModEntry.SPF - ModEntry.nextFrame;
+                ModEntry.nextFrame += updates;
 
+                // Call update command necessary number of times
+                // -1 to account for returning true
+                for (int i = 1; i < updates; i++)
+                {
                     GameTime time = new GameTime(new TimeSpan(ModEntry.elapsedTicks), new TimeSpan(ModEntry.SPF));
                     GameTime[] parameters = new[] { time };
 
                     AccessTools.Method(typeof(Game1), "Update").Invoke(__instance, parameters);
+                }
+                Mntr.Log($"LIC {updates}");
+                if (updates >= 1)
+                {
+                    GameTime time = new GameTime(new TimeSpan(ModEntry.elapsedTicks), new TimeSpan(ModEntry.SPF));
+                    GameTime[] parameters = new[] { time };
                     Mntr.LogOnce("Called Update", LogLevel.Trace);
+                    return true;
                 }
                 return false;
             }
