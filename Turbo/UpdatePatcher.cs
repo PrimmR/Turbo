@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using System;
+using System.Reflection;
 using Force.DeepCloner;
 using HarmonyLib;
 using Microsoft.Xna.Framework;
@@ -18,8 +19,10 @@ namespace Turbo
         }
 
         /// <summary>Finaliser patch for Stardew's Game1.Instance_Update method</summary>
-        internal static bool UpdateGame(Game1 __instance, MethodInfo __originalMethod)
+        internal static bool UpdateGame(Game1 __instance, MethodInfo __originalMethod, GameTime gameTime)
         {
+            gameTime.ElapsedGameTime = new TimeSpan(ModEntry.SPF);
+
             // Increment global ticks
             try
             {
@@ -53,9 +56,9 @@ namespace Turbo
                 {
                     ModEntry.nextFrame++;
 
-                    GameTime time = new GameTime(new TimeSpan(ModEntry.elapsedTicks), new TimeSpan(ModEntry.SPF));
-                    GameTime[] parameters = new[] { time };
-
+                    //GameTime time = new GameTime(new TimeSpan(ModEntry.elapsedTicks), new TimeSpan(ModEntry.SPF));
+                    GameTime[] parameters = new[] { gameTime };
+                    
                     AccessTools.Method(typeof(Game1), "Update").Invoke(__instance, parameters);
                     Mntr.LogOnce("Called Update", LogLevel.Trace);
                 }
