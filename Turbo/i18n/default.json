@@ -3,5 +3,16 @@
     "ClockMode.Change": "Clock Mode:",
     "ClockMode.Regular": "Regular",
     "ClockMode.Constant": "Constant",
-    "ClockMode.Frozen": "Frozen"
+    "ClockMode.Frozen": "Frozen",
+
+    "ClockMode.ConfigName": "Clock Mode",
+    "ClockMode.ConfigTooltip": "How the in-game clock behaves when the game speed is altered. This can also be changed using a keybind during gameplay.",
+    "DecrementSpeed.ConfigName": "Decrement Speed",
+    "DecrementSpeed.ConfigTooltip": "The keybind to slow time down.",
+    "IncrementSpeed.ConfigName": "Increment Speed",
+    "IncrementSpeed.ConfigTooltip": "The keybind to speed time up.",
+    "ResetSpeed.ConfigName": "Reset Speed",
+    "ResetSpeed.ConfigTooltip": "The keybind to reset game speed to its original value.",
+    "CycleClockMode.ConfigName": "Cycle Clock Mode",
+    "CycleClockMode.ConfigTooltip": "The keybind to cycle the clock mode during gameplay."
 }
